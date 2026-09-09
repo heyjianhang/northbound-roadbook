@@ -1,0 +1,16 @@
+{
+  "version": "0.3.0",
+  "buildVersion": "456a6a0597aaee0b",
+  "checkedAt": "2026-09-09T06:12:51.712421+00:00",
+  "automatedTests": 48,
+  "precacheResources": 39,
+  "staticAssertions": [
+    "Initial HTML contains the actual fixed first-day roadbook, not a loading placeholder",
+    "All internal anchors use index-page query parameters",
+    "Client bundles contain no IndexedDB, AMap config requests, cross-window trip storage, or editing WebMCP tools",
+    "HTTP page/resource hashes match build files; removed API/proxy paths return 404"
+  ],
+  "browserInteractionTested": false,
+  "browserNote": "The previously used browser tab was closed. Preview open request was queued; no new static-version browser interaction claimed.",
+  "physicalPhonePwaTested": false
+}

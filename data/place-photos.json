@@ -1,0 +1,57 @@
+{
+  "genhe": {
+    "src": "/images/place-genhe.jpg",
+    "alt": "根河地区的大兴安岭秋林（区域风光）",
+    "width": 1280,
+    "height": 853,
+    "author": "Charlie fong",
+    "takenAt": "2017-10-03",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gegengol_in_Greater_Khingan_forest2017.jpg"
+  },
+  "mordaga": {
+    "src": "/images/place-mordaga.jpg",
+    "alt": "莫尔道嘎森林公园的秋色",
+    "width": 1280,
+    "height": 850,
+    "author": "mayanming",
+    "takenAt": "Taken on 9",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E8%8E%AB%E5%B0%94%E9%81%93%E5%98%8E%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD_%E7%BA%A2%E5%8F%B6_-_panoramio.jpg"
+  },
+  "ergun": {
+    "src": "/images/place-ergun.jpg",
+    "alt": "额尔古纳湿地景区的马蹄岛",
+    "width": 1280,
+    "height": 850,
+    "author": "中国郑开亮",
+    "takenAt": "11 Septemb",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%A2%9D%E5%B0%94%E5%8F%A4%E7%BA%B3%E6%B9%BF%E5%9C%B0%E5%85%AC%E5%9B%AD%E2%80%94%E9%A9%AC%E8%B9%84%E5%B2%9B_-_panoramio.jpg"
+  },
+  "aoluguya": {
+    "src": "/images/place-aoluguya.jpg",
+    "alt": "敖鲁古雅的驯鹿",
+    "width": 1280,
+    "height": 720,
+    "author": "Popolon",
+    "takenAt": "2016-05-20",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Evenk.cerfs.jpg"
+  },
+  "wulan": {
+    "src": "/images/place-wulan.jpg",
+    "alt": "乌兰山景区入口附近的草原景观",
+    "width": 1280,
+    "height": 853,
+    "author": "Liuxingy",
+    "takenAt": "2025-07-15",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%A2%9D%E5%B0%94%E5%8F%A4%E7%BA%B3_%E4%B9%8C%E5%85%B0%E5%B1%B1%E6%99%AF%E5%8C%BA%E5%85%A5%E5%8F%A3%E5%A4%84%E9%99%84%E8%BF%91%E6%99%AF%E8%A7%82_08.jpg"
+  }
+}

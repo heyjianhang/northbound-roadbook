@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 3,
+  "coordinateSystem": "GCJ-02",
+  "id": "hulunbuir-2026",
+  "title": "北行 · 呼伦贝尔",
+  "startDate": "2026-10-01",
+  "endDate": "2026-10-06",
+  "travelers": 2,
+  "updatedAt": "2026-09-09T00:00:00+08:00",
+  "links": [
+    {
+      "id": "xhs-1",
+      "title": "海拉尔北线追秋 · 自驾四天攻略",
+      "url": "https://www.xiaohongshu.com/explore/68d4d372000000001300ce15",
+      "note": "2025年9月游记；路线参考，不能作为国庆开放证明"
+    }
+  ],
+  "days": [
+    {
+      "id": "d1",
+      "date": "2026-10-01",
+      "title": "沈阳 → 海拉尔",
+      "subtitle": "一路向北",
+      "note": "今天以赶路为主，给途中休息留出时间。",
+      "stops": [
+        {
+          "id": "visit-1",
+          "name": "沈阳",
+          "lng": 123.43076,
+          "lat": 41.8056,
+          "amapId": "B00180JCIR",
+          "area": "沈阳市区",
+          "durationMin": 0,
+          "note": "集合点；10月6日回到这里",
+          "links": [
+            {
+              "id": "source-visit-1",
+              "title": "高德地点",
+              "url": "https://ditu.amap.com/place/B00180JCIR",
+              "note": "原路书参考点"
+            }
+          ]
+        },
+        {
+          "id": "visit-2",
+          "name": "海拉尔",
+          "lng": null,
+          "lat": null,
+          "amapId": "",
+          "area": "海拉尔",
+          "durationMin": 0,
+          "note": "选择当天实际出发或抵达的位置后，可计算路线。",
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "d2",
+      "date": "2026-10-02",
+      "title": "草原 → 额尔古纳 → 根河",
+      "subtitle": "河流、草原与湿地",
+      "note": "沿莫尔格勒河到额尔古纳，再前往根河。",
+      "stops": [
+        {
+          "id": "visit-3",
+          "name": "海拉尔",
+          "lng": null,
+          "lat": null,
+          "amapId": "",
+          "area": "海拉尔",
+          "durationMin": 0,
+          "note": "选择当天实际出发或抵达的位置后，可计算路线。",
+          "links": []
+        },
+        {
+          "id": "visit-4",
+          "name": "莫尔格勒河游客中心",
+          "lng": 119.70972,
+          "lat": 49.461608,
+          "amapId": "B0JUF5NATD",
+          "area": "陈巴尔虎旗",
+          "durationMin": 90,
+          "note": "国庆自驾预约规则待核实",
+          "links": [
+            {
+              "id": "source-visit-4",
+              "title": "高德地点",
+              "url": "https://ditu.amap.com/place/B0JUF5NATD",
+              "note": "原路书参考点"
+            }
+          ]
+        },
+        {
+          "id": "visit-5",
+          "name": "额尔古纳湿地景区",
+          "lng": 120.148865,
+          "lat": 50.2492,
+          "amapId": "B0FFFGOSGZ",
+          "area": "额尔古纳",
+          "durationMin": 90,
+          "note": "区别于额尔古纳国家湿地公园",
+          "links": [
+            {
+              "id": "source-visit-5",
+              "title": "高德地点",
+              "url": "https://ditu.amap.com/place/B0FFFGOSGZ",
+              "note": "原路书参考点"
+            }
+          ]
+        },
+        {
+          "id": "visit-6",
+          "name": "根河源国家湿地公园",
+          "lng": 121.680386,
+          "lat": 50.866938,
+          "amapId": "B0FFG9SBAO",
+          "area": "根河",
+          "durationMin": 0,
+          "note": "沿用原路书景区参考点，具体入口可在地图上调整。",
+          "links": [
+            {
+              "id": "source-visit-6",
+              "title": "高德地点",
+              "url": "https://ditu.amap.com/place/B0FFG9SBAO",
+              "note": "原路书参考点"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d3",
+      "date": "2026-10-03",
+      "title": "根河 → 莫尔道嘎",
+      "subtitle": "走进大兴安岭",
+      "note": "敖鲁古雅看驯鹿，再自驾前往莫尔道嘎。",
+      "stops": [
+        {
+          "id": "visit-7",
+          "name": "根河源国家湿地公园",
+          "lng": 121.680386,
+          "lat": 50.866938,
+          "amapId": "B0FFG9SBAO",
+          "area": "根河",
+          "durationMin": 0,
+          "note": "沿用原路书景区参考点，具体入口可在地图上调整。",
+          "links": [
+            {
+              "id": "source-visit-7",
+              "title": "高德地点",
+              "url": "https://ditu.amap.com/place/B0FFG9SBAO",
+              "note": "原路书参考点"
+            }
+          ]
+        },
+        {
+          "id": "visit-8",
+          "name": "敖鲁古雅使鹿部落",
+          "lng": 121.479287,
+          "lat": 50.775955,
+          "amapId": "B0FFFGOOS1",
+          "area": "根河",
+          "durationMin": 120,
+          "note": "导航点采用南门停车场",
+          "links": [
+            {
+              "id": "source-visit-8",
+              "title": "高德地点",
+              "url": "https://ditu.amap.com/place/B0FFFGOOS1",
+              "note": "原路书参考点"
+            }
+          ]
+        },
+        {
+          "id": "visit-9",
+          "name": "莫尔道嘎国家森林公园",
+          "lng": 120.67335,
+          "lat": 51.331892,
+          "amapId": "B0HRD7YCX3",
+          "area": "莫尔道嘎",
+          "durationMin": 150,
+          "note": "自驾游园，不坐小火车；园内里程与国庆政策单独确认",
+          "links": [
+            {
+              "id": "source-visit-9",
+              "title": "高德地点",
+              "url": "https://ditu.amap.com/place/B0HRD7YCX3",
+              "note": "原路书参考点"
+            }
+          ]
+        },
+        {
+          "id": "visit-10",
+          "name": "莫尔道嘎镇",
+          "lng": null,
+          "lat": null,
+          "amapId": "",
+          "area": "莫尔道嘎",
+          "durationMin": 0,
+          "note": "在镇上走走，具体停靠点到时再定。",
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "d4",
+      "date": "2026-10-04",
+      "title": "室韦 → 卡线 → 黑山头",
+      "subtitle": "沿着边境公路",
+      "note": "计划沿卡线去黑山头；九卡、八卡等尚未作为途经点添加，导航路径需另行确认。",
+      "stops": [
+        {
+          "id": "visit-11",
+          "name": "莫尔道嘎镇",
+          "lng": null,
+          "lat": null,
+          "amapId": "",
+          "area": "莫尔道嘎",
+          "durationMin": 0,
+          "note": "在镇上走走，具体停靠点到时再定。",
+          "links": []
+        },
+        {
+          "id": "visit-12",
+          "name": "室韦小镇",
+          "lng": 119.906516,
+          "lat": 51.337778,
+          "amapId": "B0K1GUUKAX",
+          "area": "室韦",
+          "durationMin": 60,
+          "note": "经卡线前往黑山头，预留停车用餐时间",
+          "links": [
+            {
+              "id": "source-visit-12",
+              "title": "高德地点",
+              "url": "https://ditu.amap.com/place/B0K1GUUKAX",
+              "note": "原路书参考点"
+            }
+          ]
+        },
+        {
+          "id": "visit-13",
+          "name": "乌兰山游客中心",
+          "lng": 119.358468,
+          "lat": 50.615464,
+          "amapId": "B0H2B7KSB8",
+          "area": "乌兰山",
+          "durationMin": 60,
+          "note": "沿X904经九卡、八卡、七卡",
+          "links": [
+            {
+              "id": "source-visit-13",
+              "title": "高德地点",
+              "url": "https://ditu.amap.com/place/B0H2B7KSB8",
+              "note": "原路书参考点"
+            }
+          ]
+        },
+        {
+          "id": "visit-14",
+          "name": "黑山头",
+          "lng": null,
+          "lat": null,
+          "amapId": "",
+          "area": "黑山头",
+          "durationMin": 0,
+          "note": "看看草原与日落，具体观景点可在路上添加。",
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "d5",
+      "date": "2026-10-05",
+      "title": "黑山头 → 海拉尔",
+      "subtitle": "在草原上慢一点",
+      "note": "留出机动时间，返回海拉尔。",
+      "stops": [
+        {
+          "id": "visit-15",
+          "name": "黑山头",
+          "lng": null,
+          "lat": null,
+          "amapId": "",
+          "area": "黑山头",
+          "durationMin": 0,
+          "note": "看看草原与日落，具体观景点可在路上添加。",
+          "links": []
+        },
+        {
+          "id": "visit-17",
+          "name": "海拉尔",
+          "lng": null,
+          "lat": null,
+          "amapId": "",
+          "area": "海拉尔",
+          "durationMin": 0,
+          "note": "选择当天实际出发或抵达的位置后，可计算路线。",
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "d6",
+      "date": "2026-10-06",
+      "title": "海拉尔 → 沈阳",
+      "subtitle": "带着秋天回家",
+      "note": "返程路线按实际出发位置单独规划。",
+      "stops": [
+        {
+          "id": "visit-18",
+          "name": "海拉尔",
+          "lng": null,
+          "lat": null,
+          "amapId": "",
+          "area": "海拉尔",
+          "durationMin": 0,
+          "note": "选择当天实际出发或抵达的位置后，可计算路线。",
+          "links": []
+        },
+        {
+          "id": "visit-19",
+          "name": "沈阳",
+          "lng": 123.43076,
+          "lat": 41.8056,
+          "amapId": "B00180JCIR",
+          "area": "沈阳市区",
+          "durationMin": 0,
+          "note": "集合点；10月6日回到这里",
+          "links": [
+            {
+              "id": "source-visit-19",
+              "title": "高德地点",
+              "url": "https://ditu.amap.com/place/B00180JCIR",
+              "note": "原路书参考点"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "unscheduled": [],
+  "routeRecords": [
+    {
+      "key": "driving:0:119.70972,49.461608>120.148865,50.2492",
+      "from": [
+        119.70972,
+        49.461608
+      ],
+      "to": [
+        120.148865,
+        50.2492
+      ],
+      "policy": 0,
+      "distanceKm": 104.7,
+      "drivingMin": 87,
+      "path": [],
+      "checkedAt": "2026-09-09",
+      "source": "原路书 · 高德驾车记录"
+    },
+    {
+      "key": "driving:0:120.148865,50.2492>121.680386,50.866938",
+      "from": [
+        120.148865,
+        50.2492
+      ],
+      "to": [
+        121.680386,
+        50.866938
+      ],
+      "policy": 0,
+      "distanceKm": 151.6,
+      "drivingMin": 156,
+      "path": [],
+      "checkedAt": "2026-09-09",
+      "source": "原路书 · 高德驾车记录"
+    },
+    {
+      "key": "driving:0:121.680386,50.866938>121.479287,50.775955",
+      "from": [
+        121.680386,
+        50.866938
+      ],
+      "to": [
+        121.479287,
+        50.775955
+      ],
+      "policy": 0,
+      "distanceKm": 22,
+      "drivingMin": 30,
+      "path": [],
+      "checkedAt": "2026-09-09",
+      "source": "原路书 · 高德驾车记录"
+    },
+    {
+      "key": "driving:0:121.479287,50.775955>120.67335,51.331892",
+      "from": [
+        121.479287,
+        50.775955
+      ],
+      "to": [
+        120.67335,
+        51.331892
+      ],
+      "policy": 0,
+      "distanceKm": 138.7,
+      "drivingMin": 152,
+      "path": [],
+      "checkedAt": "2026-09-09",
+      "source": "原路书 · 高德驾车记录"
+    },
+    {
+      "key": "driving:0:119.906516,51.337778>119.358468,50.615464",
+      "from": [
+        119.906516,
+        51.337778
+      ],
+      "to": [
+        119.358468,
+        50.615464
+      ],
+      "policy": 0,
+      "distanceKm": 105.7,
+      "drivingMin": 145,
+      "path": [],
+      "checkedAt": "2026-09-09",
+      "source": "原路书 · 高德驾车记录"
+    }
+  ]
+}

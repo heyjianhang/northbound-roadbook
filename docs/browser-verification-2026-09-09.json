@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-09-09T09:08:52.174639+00:00",
+  "version": "0.3.3",
+  "buildVersion": "1a0057f5ad112ee5",
+  "checks": [
+    "AMap base map loaded with AutoNavi attribution",
+    "All 11 custom markers rendered",
+    "CSS dots measured at exact horizontal and vertical centre",
+    "Selected-day fit and six-color reference routes rendered",
+    "Map to place posts to Back returns original map day and selected card",
+    "All 11 marker screen positions identical before and after returning; scope restored",
+    "Location requested; browser timed out and retry remained available"
+  ],
+  "sourcePosts": 52,
+  "placeAssociations": 53,
+  "physicalPhonePwaTested": false,
+  "allPostsFullTextReviewed": false,
+  "previousPostChecks": {
+    "buildVersion": "352c3bf3d88fd124",
+    "checks": [
+      "Updated preview using Refresh update button",
+      "Genheyuan detail page displays five post cards",
+      "All five rendered anchors target Xiaohongshu note URLs in a new tab",
+      "No horizontal page overflow",
+      "All 11 data mappings have 3-5 posts and no duplicate IDs within a place",
+      "Copied title/URL map matches captured search results: FNV-1a 3984506069"
+    ]
+  },
+  "previousUiChecks": {
+    "buildVersion": "5c236f732f0c5900",
+    "checks": [
+      "Legacy settings query renders the roadbook heading",
+      "No installation or offline text in rendered page",
+      "Mobile navigation contains only roadbook and route",
+      "Header hidden at 499px viewport",
+      "No horizontal page overflow"
+    ]
+  },
+  "actualLocationFixTested": false,
+  "previousMapChecks": {
+    "buildVersion": "c91c92b242ca0b47",
+    "checks": [
+      "Map base tiles loaded in mobile preview",
+      "Six colored road paths and 11 place markers rendered",
+      "Selecting October 4 updates URL, active color and fits that day",
+      "Full trip and selected day map screenshots inspected",
+      "Route SVG rendered at 462px width, not constrained by icon styles",
+      "Wulanshan marker opens place card with correct post-list and AMap navigation URLs",
+      "No horizontal overflow",
+      "My location requested browser geolocation; timeout feedback appeared and retry button recovered"
+    ]
+  },
+  "previousFullscreenChecks": {
+    "buildVersion": "fc9374c621d49d4f",
+    "checks": [
+      "Map fills available viewport: 452x745 within 452x806 window; remaining height is bottom navigation",
+      "No vertical or horizontal page overflow",
+      "Floating date selector changes to October 2 and selected-day view",
+      "Zoom in changes scale from 30 km to 10 km",
+      "Map touch-action none and Leaflet touchZoom/dragging enabled; actual two-finger phone gesture not tested",
+      "Rendered fullscreen map inspected"
+    ]
+  }
+}

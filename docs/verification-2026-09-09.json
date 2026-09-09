@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-09-09T09:08:52.269Z",
+  "origin": "http://127.0.0.1:4173",
+  "buildVersion": "1a0057f5ad112ee5",
+  "pages": 7,
+  "pageChecks": "All fixed HTML/RSC routes returned matching exported content with local day/stop parameters",
+  "precacheResources": 44,
+  "assetChecks": "Every generated offline resource returned 200 and matched its build SHA-256",
+  "workerChecks": "Version and service worker scope/cache headers verified",
+  "amapMode": "AMap JS API with server-side security proxy; external navigation links",
+  "browserInteractionTested": true,
+  "browserReport": "browser-verification-2026-09-09.json",
+  "actualPhonePwaTested": false,
+  "actualAmapQueryTested": false
+}

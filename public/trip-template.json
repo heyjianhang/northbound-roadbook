@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 2,
+  "coordinateSystem": "GCJ-02",
+  "id": "hulunbuir-2026",
+  "title": "呼伦贝尔 · 六日自驾",
+  "startDate": "2026-10-01",
+  "endDate": "2026-10-06",
+  "travelers": 2,
+  "updatedAt": "2026-09-09T00:00:00+08:00",
+  "places": [
+    {
+      "id": "shenyang",
+      "name": "沈阳",
+      "kind": "city",
+      "lng": 123.43076,
+      "lat": 41.8056,
+      "amapId": "B00180JCIR",
+      "area": "沈阳市区",
+      "note": "集合点；10月6日回到这里",
+      "sourceUrl": "https://ditu.amap.com/place/B00180JCIR",
+      "checkedAt": "2026-09-09",
+      "verification": "pending"
+    },
+    {
+      "id": "hailar-camp",
+      "name": "海拉尔 · 两河圣山营地",
+      "kind": "camp",
+      "lng": 119.738221,
+      "lat": 49.276866,
+      "amapId": "B0HR1ABOE5",
+      "area": "海拉尔",
+      "note": "国庆营业、自带帐篷接待、水电和费用待确认；酒店兜底",
+      "sourceUrl": "https://ditu.amap.com/place/B0HR1ABOE5",
+      "checkedAt": "2026-09-09",
+      "verification": "pending",
+      "camping": {
+        "permission": "pending",
+        "toilet": "unknown",
+        "note": "过夜方式、厕所卫生、国庆开放与风景条件待联系场地方确认。",
+        "backup": ""
+      }
+    },
+    {
+      "id": "moergele",
+      "name": "莫尔格勒河游客中心",
+      "kind": "sight",
+      "lng": 119.70972,
+      "lat": 49.461608,
+      "amapId": "B0JUF5NATD",
+      "area": "陈巴尔虎旗",
+      "note": "国庆自驾预约规则待核实",
+      "sourceUrl": "https://ditu.amap.com/place/B0JUF5NATD",
+      "checkedAt": "2026-09-09",
+      "verification": "pending"
+    },
+    {
+      "id": "erguna",
+      "name": "额尔古纳湿地景区",
+      "kind": "sight",
+      "lng": 120.148865,
+      "lat": 50.2492,
+      "amapId": "B0FFFGOSGZ",
+      "area": "额尔古纳",
+      "note": "可跳过；区别于额尔古纳国家湿地公园",
+      "sourceUrl": "https://ditu.amap.com/place/B0FFFGOSGZ",
+      "checkedAt": "2026-09-09",
+      "verification": "pending"
+    },
+    {
+      "id": "genhe-camp",
+      "name": "根河源房车营地",
+      "kind": "camp",
+      "lng": 121.680386,
+      "lat": 50.866938,
+      "amapId": "B0FFG9SBAO",
+      "area": "根河",
+      "note": "坐标采用景区点位；准确入口、晚到入住及帐篷接待待核实",
+      "sourceUrl": "https://ditu.amap.com/place/B0FFG9SBAO",
+      "checkedAt": "2026-09-09",
+      "verification": "pending",
+      "camping": {
+        "permission": "pending",
+        "toilet": "unknown",
+        "note": "过夜方式、厕所卫生、国庆开放与风景条件待联系场地方确认。",
+        "backup": ""
+      }
+    },
+    {
+      "id": "aoluguya",
+      "name": "敖鲁古雅使鹿部落",
+      "kind": "sight",
+      "lng": 121.479287,
+      "lat": 50.775955,
+      "amapId": "B0FFFGOOS1",
+      "area": "根河",
+      "note": "必去；导航点采用南门停车场",
+      "sourceUrl": "https://ditu.amap.com/place/B0FFFGOOS1",
+      "checkedAt": "2026-09-09",
+      "verification": "pending"
+    },
+    {
+      "id": "moerdaoga-park",
+      "name": "莫尔道嘎国家森林公园",
+      "kind": "sight",
+      "lng": 120.67335,
+      "lat": 51.331892,
+      "amapId": "B0HRD7YCX3",
+      "area": "莫尔道嘎",
+      "note": "自驾游园，不坐小火车；园内里程与国庆政策单独确认",
+      "sourceUrl": "https://ditu.amap.com/place/B0HRD7YCX3",
+      "checkedAt": "2026-09-09",
+      "verification": "pending"
+    },
+    {
+      "id": "moerdaoga-town",
+      "name": "莫尔道嘎镇 · 住宿待定",
+      "kind": "camp",
+      "lng": 120.748427,
+      "lat": 51.268475,
+      "amapId": "B0L1HZX2EK",
+      "area": "莫尔道嘎",
+      "note": "坐标采用镇区酒店候选；未确认可扎帐篷营位",
+      "sourceUrl": "https://ditu.amap.com/place/B0L1HZX2EK",
+      "checkedAt": "2026-09-09",
+      "verification": "pending",
+      "camping": {
+        "permission": "pending",
+        "toilet": "unknown",
+        "note": "过夜方式、厕所卫生、国庆开放与风景条件待联系场地方确认。",
+        "backup": ""
+      }
+    },
+    {
+      "id": "shiwei",
+      "name": "室韦小镇",
+      "kind": "sight",
+      "lng": 119.906516,
+      "lat": 51.337778,
+      "amapId": "B0K1GUUKAX",
+      "area": "室韦",
+      "note": "经卡线前往黑山头，预留停车用餐时间",
+      "sourceUrl": "https://ditu.amap.com/place/B0K1GUUKAX",
+      "checkedAt": "2026-09-09",
+      "verification": "pending"
+    },
+    {
+      "id": "wulan",
+      "name": "乌兰山游客中心",
+      "kind": "sight",
+      "lng": 119.358468,
+      "lat": 50.615464,
+      "amapId": "B0H2B7KSB8",
+      "area": "乌兰山",
+      "note": "沿X904经九卡、八卡、七卡；游览可选",
+      "sourceUrl": "https://ditu.amap.com/place/B0H2B7KSB8",
+      "checkedAt": "2026-09-09",
+      "verification": "pending"
+    },
+    {
+      "id": "heishantou-camp",
+      "name": "黑山头 · 顺禾营地",
+      "kind": "camp",
+      "lng": 119.553924,
+      "lat": 50.23216,
+      "amapId": "B0LRMRYYWD",
+      "area": "黑山头",
+      "note": "从乌兰山经五卡前往；国庆接待待核实",
+      "sourceUrl": "https://ditu.amap.com/place/B0LRMRYYWD",
+      "checkedAt": "2026-09-09",
+      "verification": "pending",
+      "camping": {
+        "permission": "pending",
+        "toilet": "unknown",
+        "note": "过夜方式、厕所卫生、国庆开放与风景条件待联系场地方确认。",
+        "backup": ""
+      }
+    },
+    {
+      "id": "hailar-food",
+      "name": "老三骨头馆（白桦东路）",
+      "kind": "food",
+      "lng": 119.742278,
+      "lat": 49.218632,
+      "amapId": "B01D600CB8",
+      "area": "海拉尔",
+      "note": "晚餐候选；高德参考人均94元，营业与停车待确认",
+      "sourceUrl": "https://ditu.amap.com/place/B01D600CB8",
+      "checkedAt": "2026-09-09",
+      "verification": "pending"
+    }
+  ],
+  "days": [
+    {
+      "id": "d1",
+      "date": "2026-10-01",
+      "title": "沈阳 → 海拉尔",
+      "subtitle": "长途赶路 · 抵达海拉尔",
+      "note": "基础驾驶约12小时，全天实际用时另计途中停留及国庆拥堵；抵达后以休息为主。",
+      "visits": [
+        {
+          "id": "visit-1",
+          "placeId": "shenyang",
+          "priority": "anchor",
+          "durationMin": 0,
+          "enabled": true
+        },
+        {
+          "id": "visit-2",
+          "placeId": "hailar-camp",
+          "priority": "anchor",
+          "durationMin": 0,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "d2",
+      "date": "2026-10-02",
+      "title": "草原 → 额尔古纳 → 根河",
+      "subtitle": "莫尔格勒河 · 湿地可选",
+      "note": "今天较满，出发晚可跳过湿地。景区开放时间不等于营地入住时间。",
+      "visits": [
+        {
+          "id": "visit-3",
+          "placeId": "hailar-camp",
+          "priority": "anchor",
+          "durationMin": 0,
+          "enabled": true
+        },
+        {
+          "id": "visit-4",
+          "placeId": "moergele",
+          "priority": "preferred",
+          "durationMin": 90,
+          "enabled": true
+        },
+        {
+          "id": "visit-5",
+          "placeId": "erguna",
+          "priority": "optional",
+          "durationMin": 90,
+          "enabled": true
+        },
+        {
+          "id": "visit-6",
+          "placeId": "genhe-camp",
+          "priority": "anchor",
+          "durationMin": 0,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "d3",
+      "date": "2026-10-03",
+      "title": "根河 → 莫尔道嘎",
+      "subtitle": "看驯鹿 · 自驾森林公园",
+      "note": "敖鲁古雅必去；莫尔道嘎是否进入园区及自驾开放范围需另行确认。",
+      "visits": [
+        {
+          "id": "visit-7",
+          "placeId": "genhe-camp",
+          "priority": "anchor",
+          "durationMin": 0,
+          "enabled": true
+        },
+        {
+          "id": "visit-8",
+          "placeId": "aoluguya",
+          "priority": "required",
+          "durationMin": 120,
+          "enabled": true
+        },
+        {
+          "id": "visit-9",
+          "placeId": "moerdaoga-park",
+          "priority": "preferred",
+          "durationMin": 150,
+          "enabled": true
+        },
+        {
+          "id": "visit-10",
+          "placeId": "moerdaoga-town",
+          "priority": "anchor",
+          "durationMin": 0,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "d4",
+      "date": "2026-10-04",
+      "title": "室韦 → 卡线 → 黑山头",
+      "subtitle": "边境公路 · 预留搭营时间",
+      "note": "计划室韦—九卡—八卡—七卡—乌兰山—五卡—黑山头。核对实时导航是否走X904。",
+      "visits": [
+        {
+          "id": "visit-11",
+          "placeId": "moerdaoga-town",
+          "priority": "anchor",
+          "durationMin": 0,
+          "enabled": true
+        },
+        {
+          "id": "visit-12",
+          "placeId": "shiwei",
+          "priority": "preferred",
+          "durationMin": 60,
+          "enabled": true
+        },
+        {
+          "id": "visit-13",
+          "placeId": "wulan",
+          "priority": "optional",
+          "durationMin": 60,
+          "enabled": true
+        },
+        {
+          "id": "visit-14",
+          "placeId": "heishantou-camp",
+          "priority": "anchor",
+          "durationMin": 0,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "d5",
+      "date": "2026-10-05",
+      "title": "黑山头 → 海拉尔",
+      "subtitle": "返程前补给 · 留出机动时间",
+      "note": "可添加骑马、博物馆或当地餐厅，抵达海拉尔后早点休息，为返程留足精力。",
+      "visits": [
+        {
+          "id": "visit-15",
+          "placeId": "heishantou-camp",
+          "priority": "anchor",
+          "durationMin": 0,
+          "enabled": true
+        },
+        {
+          "id": "visit-16",
+          "placeId": "hailar-food",
+          "priority": "optional",
+          "durationMin": 75,
+          "enabled": false
+        },
+        {
+          "id": "visit-17",
+          "placeId": "hailar-camp",
+          "priority": "anchor",
+          "durationMin": 0,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "d6",
+      "date": "2026-10-06",
+      "title": "海拉尔 → 沈阳",
+      "subtitle": "返程 · 回到沈阳",
+      "note": "返程单独查询高德路线，安排好途中休息，视实际路况调整出发时间。",
+      "visits": [
+        {
+          "id": "visit-18",
+          "placeId": "hailar-camp",
+          "priority": "anchor",
+          "durationMin": 0,
+          "enabled": true
+        },
+        {
+          "id": "visit-19",
+          "placeId": "shenyang",
+          "priority": "anchor",
+          "durationMin": 0,
+          "enabled": true
+        }
+      ]
+    }
+  ],
+  "routeRecords": [
+    {
+      "fromId": "shenyang",
+      "toId": "hailar-camp",
+      "distanceKm": 1157.7,
+      "drivingMin": 714,
+      "fromCoord": "123.43076,41.8056",
+      "toCoord": "119.738221,49.276866",
+      "checkedAt": "2026-09-09",
+      "source": "高德驾车路线查询",
+      "sourceUrl": "https://lbs.amap.com/api/webservice/guide/api/newroute"
+    },
+    {
+      "fromId": "hailar-camp",
+      "toId": "moergele",
+      "distanceKm": 21.6,
+      "drivingMin": 22,
+      "fromCoord": "119.738221,49.276866",
+      "toCoord": "119.70972,49.461608",
+      "checkedAt": "2026-09-09",
+      "source": "高德驾车路线查询",
+      "sourceUrl": "https://lbs.amap.com/api/webservice/guide/api/newroute"
+    },
+    {
+      "fromId": "moergele",
+      "toId": "erguna",
+      "distanceKm": 104.7,
+      "drivingMin": 87,
+      "fromCoord": "119.70972,49.461608",
+      "toCoord": "120.148865,50.2492",
+      "checkedAt": "2026-09-09",
+      "source": "高德驾车路线查询",
+      "sourceUrl": "https://lbs.amap.com/api/webservice/guide/api/newroute"
+    },
+    {
+      "fromId": "erguna",
+      "toId": "genhe-camp",
+      "distanceKm": 151.6,
+      "drivingMin": 156,
+      "fromCoord": "120.148865,50.2492",
+      "toCoord": "121.680386,50.866938",
+      "checkedAt": "2026-09-09",
+      "source": "高德驾车路线查询",
+      "sourceUrl": "https://lbs.amap.com/api/webservice/guide/api/newroute"
+    },
+    {
+      "fromId": "genhe-camp",
+      "toId": "aoluguya",
+      "distanceKm": 22,
+      "drivingMin": 30,
+      "fromCoord": "121.680386,50.866938",
+      "toCoord": "121.479287,50.775955",
+      "checkedAt": "2026-09-09",
+      "source": "高德驾车路线查询",
+      "sourceUrl": "https://lbs.amap.com/api/webservice/guide/api/newroute"
+    },
+    {
+      "fromId": "aoluguya",
+      "toId": "moerdaoga-park",
+      "distanceKm": 138.7,
+      "drivingMin": 152,
+      "fromCoord": "121.479287,50.775955",
+      "toCoord": "120.67335,51.331892",
+      "checkedAt": "2026-09-09",
+      "source": "高德驾车路线查询",
+      "sourceUrl": "https://lbs.amap.com/api/webservice/guide/api/newroute"
+    },
+    {
+      "fromId": "moerdaoga-park",
+      "toId": "moerdaoga-town",
+      "distanceKm": 9.2,
+      "drivingMin": 13,
+      "fromCoord": "120.67335,51.331892",
+      "toCoord": "120.748427,51.268475",
+      "checkedAt": "2026-09-09",
+      "source": "高德驾车路线查询",
+      "sourceUrl": "https://lbs.amap.com/api/webservice/guide/api/newroute"
+    },
+    {
+      "fromId": "moerdaoga-town",
+      "toId": "shiwei",
+      "distanceKm": 88.3,
+      "drivingMin": 118,
+      "fromCoord": "120.748427,51.268475",
+      "toCoord": "119.906516,51.337778",
+      "checkedAt": "2026-09-09",
+      "source": "高德驾车路线查询",
+      "sourceUrl": "https://lbs.amap.com/api/webservice/guide/api/newroute"
+    },
+    {
+      "fromId": "shiwei",
+      "toId": "wulan",
+      "distanceKm": 105.7,
+      "drivingMin": 145,
+      "fromCoord": "119.906516,51.337778",
+      "toCoord": "119.358468,50.615464",
+      "checkedAt": "2026-09-09",
+      "source": "高德驾车路线查询",
+      "sourceUrl": "https://lbs.amap.com/api/webservice/guide/api/newroute"
+    },
+    {
+      "fromId": "wulan",
+      "toId": "heishantou-camp",
+      "distanceKm": 57.3,
+      "drivingMin": 57,
+      "fromCoord": "119.358468,50.615464",
+      "toCoord": "119.553924,50.23216",
+      "checkedAt": "2026-09-09",
+      "source": "高德驾车路线查询",
+      "sourceUrl": "https://lbs.amap.com/api/webservice/guide/api/newroute"
+    },
+    {
+      "fromId": "heishantou-camp",
+      "toId": "hailar-camp",
+      "distanceKm": 140.5,
+      "drivingMin": 138,
+      "fromCoord": "119.553924,50.23216",
+      "toCoord": "119.738221,49.276866",
+      "checkedAt": "2026-09-09",
+      "source": "高德驾车路线查询",
+      "sourceUrl": "https://lbs.amap.com/api/webservice/guide/api/newroute"
+    }
+  ],
+  "links": [
+    {
+      "id": "xhs-1",
+      "title": "海拉尔北线追秋 · 自驾四天攻略",
+      "url": "https://www.xiaohongshu.com/explore/68d4d372000000001300ce15",
+      "note": "2025年9月游记；路线参考，不能作为国庆开放证明"
+    }
+  ],
+  "derived": {
+    "generatedAt": "2026-09-08T20:36:08.134Z",
+    "legs": [
+      {
+        "id": "d1--visit-1--visit-2",
+        "dayId": "d1",
+        "fromId": "shenyang",
+        "toId": "hailar-camp",
+        "fingerprint": "shenyang@123.43076,41.8056>hailar-camp@119.738221,49.276866",
+        "distanceKm": 1157.7,
+        "drivingMin": 714,
+        "source": "高德驾车路线查询",
+        "checkedAt": "2026-09-09"
+      },
+      {
+        "id": "d2--visit-3--visit-4",
+        "dayId": "d2",
+        "fromId": "hailar-camp",
+        "toId": "moergele",
+        "fingerprint": "hailar-camp@119.738221,49.276866>moergele@119.70972,49.461608",
+        "distanceKm": 21.6,
+        "drivingMin": 22,
+        "source": "高德驾车路线查询",
+        "checkedAt": "2026-09-09"
+      },
+      {
+        "id": "d2--visit-4--visit-5",
+        "dayId": "d2",
+        "fromId": "moergele",
+        "toId": "erguna",
+        "fingerprint": "moergele@119.70972,49.461608>erguna@120.148865,50.2492",
+        "distanceKm": 104.7,
+        "drivingMin": 87,
+        "source": "高德驾车路线查询",
+        "checkedAt": "2026-09-09"
+      },
+      {
+        "id": "d2--visit-5--visit-6",
+        "dayId": "d2",
+        "fromId": "erguna",
+        "toId": "genhe-camp",
+        "fingerprint": "erguna@120.148865,50.2492>genhe-camp@121.680386,50.866938",
+        "distanceKm": 151.6,
+        "drivingMin": 156,
+        "source": "高德驾车路线查询",
+        "checkedAt": "2026-09-09"
+      },
+      {
+        "id": "d3--visit-7--visit-8",
+        "dayId": "d3",
+        "fromId": "genhe-camp",
+        "toId": "aoluguya",
+        "fingerprint": "genhe-camp@121.680386,50.866938>aoluguya@121.479287,50.775955",
+        "distanceKm": 22,
+        "drivingMin": 30,
+        "source": "高德驾车路线查询",
+        "checkedAt": "2026-09-09"
+      },
+      {
+        "id": "d3--visit-8--visit-9",
+        "dayId": "d3",
+        "fromId": "aoluguya",
+        "toId": "moerdaoga-park",
+        "fingerprint": "aoluguya@121.479287,50.775955>moerdaoga-park@120.67335,51.331892",
+        "distanceKm": 138.7,
+        "drivingMin": 152,
+        "source": "高德驾车路线查询",
+        "checkedAt": "2026-09-09"
+      },
+      {
+        "id": "d3--visit-9--visit-10",
+        "dayId": "d3",
+        "fromId": "moerdaoga-park",
+        "toId": "moerdaoga-town",
+        "fingerprint": "moerdaoga-park@120.67335,51.331892>moerdaoga-town@120.748427,51.268475",
+        "distanceKm": 9.2,
+        "drivingMin": 13,
+        "source": "高德驾车路线查询",
+        "checkedAt": "2026-09-09"
+      },
+      {
+        "id": "d4--visit-11--visit-12",
+        "dayId": "d4",
+        "fromId": "moerdaoga-town",
+        "toId": "shiwei",
+        "fingerprint": "moerdaoga-town@120.748427,51.268475>shiwei@119.906516,51.337778",
+        "distanceKm": 88.3,
+        "drivingMin": 118,
+        "source": "高德驾车路线查询",
+        "checkedAt": "2026-09-09"
+      },
+      {
+        "id": "d4--visit-12--visit-13",
+        "dayId": "d4",
+        "fromId": "shiwei",
+        "toId": "wulan",
+        "fingerprint": "shiwei@119.906516,51.337778>wulan@119.358468,50.615464",
+        "distanceKm": 105.7,
+        "drivingMin": 145,
+        "source": "高德驾车路线查询",
+        "checkedAt": "2026-09-09"
+      },
+      {
+        "id": "d4--visit-13--visit-14",
+        "dayId": "d4",
+        "fromId": "wulan",
+        "toId": "heishantou-camp",
+        "fingerprint": "wulan@119.358468,50.615464>heishantou-camp@119.553924,50.23216",
+        "distanceKm": 57.3,
+        "drivingMin": 57,
+        "source": "高德驾车路线查询",
+        "checkedAt": "2026-09-09"
+      },
+      {
+        "id": "d5--visit-15--visit-17",
+        "dayId": "d5",
+        "fromId": "heishantou-camp",
+        "toId": "hailar-camp",
+        "fingerprint": "heishantou-camp@119.553924,50.23216>hailar-camp@119.738221,49.276866",
+        "distanceKm": 140.5,
+        "drivingMin": 138,
+        "source": "高德驾车路线查询",
+        "checkedAt": "2026-09-09"
+      },
+      {
+        "id": "d6--visit-18--visit-19",
+        "dayId": "d6",
+        "fromId": "hailar-camp",
+        "toId": "shenyang",
+        "fingerprint": "hailar-camp@119.738221,49.276866>shenyang@123.43076,41.8056",
+        "distanceKm": null,
+        "drivingMin": null,
+        "source": "",
+        "checkedAt": ""
+      }
+    ],
+    "issues": [
+      {
+        "id": "d6--visit-18--visit-19-distance",
+        "dayId": "d6",
+        "legId": "d6--visit-18--visit-19",
+        "message": "路段里程待查，请补齐坐标后查询高德路线。"
+      },
+      {
+        "id": "hailar-camp-camp",
+        "message": "海拉尔 · 两河圣山营地：国庆能否入住或搭帐篷过夜待确认。"
+      },
+      {
+        "id": "hailar-camp-toilet",
+        "message": "海拉尔 · 两河圣山营地：厕所及卫生条件需要确认。"
+      },
+      {
+        "id": "genhe-camp-camp",
+        "message": "根河源房车营地：国庆能否入住或搭帐篷过夜待确认。"
+      },
+      {
+        "id": "genhe-camp-toilet",
+        "message": "根河源房车营地：厕所及卫生条件需要确认。"
+      },
+      {
+        "id": "moerdaoga-town-camp",
+        "message": "莫尔道嘎镇 · 住宿待定：国庆能否入住或搭帐篷过夜待确认。"
+      },
+      {
+        "id": "moerdaoga-town-toilet",
+        "message": "莫尔道嘎镇 · 住宿待定：厕所及卫生条件需要确认。"
+      },
+      {
+        "id": "heishantou-camp-camp",
+        "message": "黑山头 · 顺禾营地：国庆能否入住或搭帐篷过夜待确认。"
+      },
+      {
+        "id": "heishantou-camp-toilet",
+        "message": "黑山头 · 顺禾营地：厕所及卫生条件需要确认。"
+      }
+    ]
+  }
+}

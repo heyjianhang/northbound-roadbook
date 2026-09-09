@@ -1,0 +1,10 @@
+node_modules
+dist
+release
+.git
+.codex
+.agents
+.env*
+.vinext
+.wrangler
+*.tsbuildinfo

@@ -1,0 +1,80 @@
+{
+  "d1": {
+    "width": 1280,
+    "height": 960,
+    "author": "jason_she",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hailar_river_-_panoramio.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "src": "/images/day-1.jpg",
+    "caption": "海拉尔河 · 2008年旧影",
+    "alt": "2008年夏季海拉尔河与两岸城市建筑",
+    "position": "center 70%",
+    "takenAt": "2008-08-15"
+  },
+  "d2": {
+    "width": 1280,
+    "height": 720,
+    "author": "Liuxingy",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%99%88%E5%B7%B4%E5%B0%94%E8%99%8E%E6%97%97_%E6%91%A9%E5%B0%94%E6%A0%B9%E9%A9%BF%E7%AB%99%E9%99%84%E8%BF%91%E7%9A%84%E8%8E%AB%E5%B0%94%E6%A0%BC%E5%8B%92%E6%B2%B3_02.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "src": "/images/day-2.jpg",
+    "caption": "莫尔格勒河 · 草原曲水",
+    "alt": "夏季莫尔格勒河在绿色草原上蜿蜒的航拍实景",
+    "position": "center 50%",
+    "takenAt": "2025-07-13"
+  },
+  "d3": {
+    "width": 1280,
+    "height": 558,
+    "author": "mayanming",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E8%8E%AB%E5%B0%94%E9%81%93%E5%98%8E_%E9%80%9A%E5%BE%80%E6%A3%AE%E6%9E%97%E6%B7%B1%E5%A4%84%E7%9A%84%E9%81%93%E8%B7%AF_-_panoramio.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "src": "/images/day-3.jpg",
+    "caption": "莫尔道嘎 · 秋林公路",
+    "alt": "莫尔道嘎九月秋林中延伸的森林公路",
+    "position": "center 50%",
+    "takenAt": "2008-09-10"
+  },
+  "d4": {
+    "width": 1280,
+    "height": 960,
+    "author": "Liuxingy",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%A2%9D%E5%B0%94%E5%8F%A4%E7%BA%B3_%E5%AE%A4%E9%9F%A6%E9%95%87%E9%81%A5%E6%9C%9B%E7%95%8C%E6%B2%B3%E4%B8%8E%E8%8D%89%E5%8E%9F_01.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "src": "/images/day-4.jpg",
+    "caption": "室韦 · 界河草原",
+    "alt": "夏季室韦界河方向的草原与马匹",
+    "position": "center 70%",
+    "takenAt": "2025-07-15"
+  },
+  "d5": {
+    "width": 1280,
+    "height": 720,
+    "author": "Liuxingy",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%A2%9D%E5%B0%94%E5%8F%A4%E7%BA%B3_%E9%BB%91%E5%B1%B1%E5%A4%B4%E9%95%87%E6%A2%81%E8%A5%BF%E6%9D%91%E4%B9%8B%E9%A9%AC%E7%BE%A4_02.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "src": "/images/day-5.jpg",
+    "caption": "黑山头 · 草原马群",
+    "alt": "黑山头梁西村夏季傍晚草原上的骑马队伍",
+    "position": "center 45%",
+    "takenAt": "2025-07-15"
+  },
+  "d6": {
+    "width": 1280,
+    "height": 900,
+    "author": "E2568",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Skyline_of_Shenyang.jpg",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "src": "/images/day-6.jpg",
+    "caption": "沈阳 · 城市夜景",
+    "alt": "沈阳夜晚亮灯的城市建筑与街道",
+    "position": "center 55%",
+    "takenAt": "2024-10-01"
+  }
+}
