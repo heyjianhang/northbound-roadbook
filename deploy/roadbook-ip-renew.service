@@ -1,0 +1,10 @@
+[Unit]
+Description=Renew the Roadbook IP TLS certificate
+Requires=docker.service
+After=network-online.target docker.service nginx.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/roadbook-ip-renew
+TimeoutStartSec=600

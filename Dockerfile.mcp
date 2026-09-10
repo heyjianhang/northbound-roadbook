@@ -1,0 +1,12 @@
+FROM python:3.12-slim
+WORKDIR /app
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 MCP_GATEWAY_HOST=0.0.0.0 MCP_GATEWAY_PORT=4180
+# 与助手使用同一份锁定依赖，保持 MCP 协议适配一致。
+COPY agent/requirements.txt ./agent/requirements.txt
+ARG PIP_INDEX_URL=https://pypi.org/simple
+RUN pip install --no-cache-dir --index-url "$PIP_INDEX_URL" -r agent/requirements.txt && useradd --uid 10001 --create-home mcp
+COPY agent/mcp_gateway.py agent/mcp_runtime.py ./agent/
+COPY data/mcp-presets.json ./data/mcp-presets.json
+USER mcp
+EXPOSE 4180
+CMD ["python", "-m", "agent.mcp_gateway"]

@@ -8,3 +8,9 @@ release
 .vinext
 .wrangler
 *.tsbuildinfo
+
+.runtime
+.venv
+__pycache__
+*.pyc
+*.sqlite*

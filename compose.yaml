@@ -1,0 +1,63 @@
+services:
+  roadbook:
+    image: northbound-roadbook/roadbook:${ROADBOOK_RELEASE:-local}
+    build:
+      context: .
+      args:
+        DEBIAN_MIRROR: ${ROADBOOK_DEBIAN_MIRROR:-http://deb.debian.org}
+        PIP_INDEX_URL: ${ROADBOOK_PYPI_INDEX_URL:-https://pypi.org/simple}
+    init: true
+    restart: unless-stopped
+    env_file: ${ROADBOOK_ENV_FILE:-.env}
+    environment:
+      MCP_GATEWAY_URL: http://mcp-gateway:4180
+      MCP_GATEWAY_TOKEN: ${MCP_GATEWAY_TOKEN:?请在 .env 中配置 MCP_GATEWAY_TOKEN}
+    ports:
+      - '127.0.0.1:4173:4173'
+    volumes:
+      - roadbook-data:/app/.runtime
+    depends_on:
+      mcp-gateway:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "fetch('http://127.0.0.1:4173/api/accounts/session').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+  mcp-gateway:
+    image: northbound-roadbook/mcp-gateway:${ROADBOOK_RELEASE:-local}
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp
+      args:
+        PIP_INDEX_URL: ${ROADBOOK_PYPI_INDEX_URL:-https://pypi.org/simple}
+    init: true
+    restart: unless-stopped
+    environment:
+      MCP_GATEWAY_TOKEN: ${MCP_GATEWAY_TOKEN:?请在 .env 中配置 MCP_GATEWAY_TOKEN}
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'python',
+          '-c',
+          "import os,urllib.request; urllib.request.urlopen(urllib.request.Request('http://127.0.0.1:4180/health',headers={'Authorization':'Bearer '+os.environ['MCP_GATEWAY_TOKEN']}),timeout=3)",
+        ]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+volumes:
+  roadbook-data:
