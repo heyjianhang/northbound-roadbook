@@ -39,3 +39,12 @@ next-env.d.ts
 !.env.example
 /release/
 *.tsbuildinfo
+
+# Private account database
+/.runtime/
+/.venv/
+__pycache__/
+*.pyc
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
