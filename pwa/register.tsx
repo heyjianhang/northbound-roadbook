@@ -1,5 +1,6 @@
 'use client';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
+import { mobilePlatform } from '@/lib/mobile-platform';
 type InstallPrompt = Event & {
   prompt(): Promise<void>;
   userChoice: Promise<{ outcome: string }>;
@@ -13,7 +14,7 @@ type PwaContextValue = {
   updateAvailable: boolean;
   offline: OfflineStatus | null;
   error: string;
-  install: () => Promise<void>;
+  install: () => Promise<'accepted' | 'dismissed' | 'unavailable'>;
   download: (progress: (done: number, total: number) => void) => Promise<void>;
   update: () => Promise<void>;
 };
@@ -55,11 +56,7 @@ export function PwaProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     let disposed = false;
     queueMicrotask(() => {
-      if (!disposed)
-        setIos(
-          /iphone|ipad|ipod/i.test(navigator.userAgent) ||
-            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1),
-        );
+      if (!disposed) setIos(mobilePlatform(navigator) === 'ios');
     });
     const standalone = matchMedia('(display-mode: standalone)');
     const checkInstalled = () =>
@@ -67,6 +64,16 @@ export function PwaProvider({ children }: { children: React.ReactNode }) {
         standalone.matches ||
           !!(navigator as Navigator & { standalone?: boolean }).standalone,
       );
+    let lastUpdateCheck = 0;
+    const resume = () => {
+      if (disposed || document.visibilityState === 'hidden') return;
+      checkInstalled();
+      const reg = registration.current;
+      if (reg && Date.now() - lastUpdateCheck > 60000) {
+        lastUpdateCheck = Date.now();
+        void reg.update().catch(() => {});
+      }
+    };
     queueMicrotask(checkInstalled);
     standalone.addEventListener('change', checkInstalled);
     const beforeInstall = (e: Event) => {
@@ -81,6 +88,8 @@ export function PwaProvider({ children }: { children: React.ReactNode }) {
     };
     window.addEventListener('beforeinstallprompt', beforeInstall);
     window.addEventListener('appinstalled', didInstall);
+    window.addEventListener('pageshow', resume);
+    document.addEventListener('visibilitychange', resume);
     if (
       'serviceWorker' in navigator &&
       window.isSecureContext &&
@@ -118,15 +127,20 @@ export function PwaProvider({ children }: { children: React.ReactNode }) {
       standalone.removeEventListener('change', checkInstalled);
       window.removeEventListener('beforeinstallprompt', beforeInstall);
       window.removeEventListener('appinstalled', didInstall);
+      window.removeEventListener('pageshow', resume);
+      document.removeEventListener('visibilitychange', resume);
     };
   }, []);
   async function install() {
-    if (!prompt.current) return;
+    if (!prompt.current) return 'unavailable' as const;
     const p = prompt.current;
     prompt.current = null;
     setCanInstall(false);
     await p.prompt();
-    await p.userChoice;
+    const choice = await p.userChoice;
+    return choice.outcome === 'accepted'
+      ? ('accepted' as const)
+      : ('dismissed' as const);
   }
   async function download(progress: (done: number, total: number) => void) {
     setError('');

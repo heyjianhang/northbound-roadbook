@@ -13,6 +13,7 @@ import { loadAmap, type MapObject, type AMapSDK, type XY } from '@/lib/amap';
 import { whenMapComplete, mapPosition } from '@/lib/map-lifecycle';
 import { wgsToGcj } from '../../scripts/map-coordinates.mjs';
 import Link from '@/lib/navigation';
+import { useMobilePlatform } from '@/lib/use-mobile-platform';
 import type { Day } from '@/features/trip/types';
 import { amapLink, pageUrl, mapPlaceUrl, roadbook } from './data';
 import routes from '../../data/map-routes.json';
@@ -50,6 +51,7 @@ let savedView: {
 } | null = null;
 
 export function RouteMap({ day }: { day: Day }) {
+  const platform = useMobilePlatform();
   const [restore] = useState(() =>
     savedView?.day === day.id ? savedView : null,
   );
@@ -296,7 +298,7 @@ export function RouteMap({ day }: { day: Day }) {
       ? day
       : roadbook.days.find((d) => d.stops.some((s) => s.name === selected)));
   const selectedStop = selectedDay?.stops.find((s) => s.name === selected);
-  const navigation = selectedStop ? amapLink(selectedStop) : null;
+  const navigation = selectedStop ? amapLink(selectedStop, platform) : null;
   return (
     <section className="trip-route" aria-label="六天路线地图">
       <h1 className="sr-only">六天路线地图</h1>
@@ -430,7 +432,7 @@ export function RouteMap({ day }: { day: Day }) {
               </Link>
               <a
                 href={navigation.href}
-                target="_blank"
+                target={navigation.target}
                 rel="noopener noreferrer"
               >
                 <Navigation />

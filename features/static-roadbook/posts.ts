@@ -1,6 +1,6 @@
 import content from '../../data/place-posts.json';
 
-type PlacePost = {
+export type PlacePost = {
   id: string;
   title: string;
   url: string;

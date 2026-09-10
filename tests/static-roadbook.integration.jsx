@@ -9,6 +9,37 @@ import {
   placeBackUrl,
 } from '../features/static-roadbook/data';
 import { validateRoadbook } from '../lib/storage/import-export';
+import placePosts from '../data/place-posts.json';
+import seedTrip from '../data/seed-trip.json';
+import seed from '../lib/seed.json';
+
+test('Xiaohongshu references use cross-device detail links with their original access parameters', () => {
+  const byId = new Map();
+  for (const posts of Object.values(placePosts)) {
+    for (const post of posts) {
+      const url = new URL(post.url);
+      assert.equal(url.origin, 'https://www.xiaohongshu.com');
+      // The desktop search_result route returns an error page on iPhone,
+      // even with HTTP 200. The detail route redirects to the mobile page.
+      assert.equal(url.pathname, `/explore/${post.id}`);
+      assert.ok(url.searchParams.get('xsec_token'));
+      assert.ok(url.searchParams.get('xsec_source'));
+      if (byId.has(post.id)) assert.equal(post.url, byId.get(post.id));
+      byId.set(post.id, post.url);
+    }
+  }
+  // General roadbook references must not fall back to a tokenless URL.
+  for (const data of [roadbook, seedTrip, seed]) {
+    const sources = JSON.stringify(data).match(
+      /https:\/\/www\.xiaohongshu\.com\/[^"\s]+/g,
+    );
+    assert.ok(sources?.length);
+    for (const source of sources) {
+      const id = new URL(source).pathname.split('/').at(-1);
+      assert.equal(source, byId.get(id));
+    }
+  }
+});
 test('fixed roadbook validates and every day/stop is reachable through static index URLs', () => {
   assert.equal(validateRoadbook(roadbook).days.length, 6);
   assert.equal(selectedPage(new URLSearchParams()).day.id, 'd1');
@@ -47,6 +78,32 @@ test('fixed locations open AMap navigation; broad areas open keyword search with
           url.searchParams.get('to'),
           `${stop.lng},${stop.lat},${stop.name}`,
         );
+      }
+      for (const platform of ['ios', 'android']) {
+        const native = amapLink(stop, platform);
+        const uri = new URL(native.href);
+        assert.equal(native.target, '_self');
+        assert.equal(
+          uri.protocol,
+          platform === 'ios' ? 'iosamap:' : 'androidamap:',
+        );
+        assert.equal(uri.searchParams.get('dev'), '0');
+        assert.ok(uri.searchParams.get('sourceApplication'));
+        assert.equal(uri.searchParams.has('key'), false);
+        if (stop.lng === null) {
+          assert.equal(uri.host, 'poi');
+          assert.equal(
+            uri.searchParams.get(platform === 'ios' ? 'name' : 'keywords'),
+            `呼伦贝尔 ${stop.name}`,
+          );
+          assert.equal(uri.searchParams.has('lat'), false);
+          assert.equal(uri.searchParams.has('lon'), false);
+        } else {
+          assert.equal(uri.host, 'navi');
+          assert.equal(Number(uri.searchParams.get('lat')), stop.lat);
+          assert.equal(Number(uri.searchParams.get('lon')), stop.lng);
+          assert.equal(uri.searchParams.get('poiname'), stop.name);
+        }
       }
     }
 });

@@ -12,8 +12,10 @@ import { RouteStatus } from '@/features/routing/route-status';
 import { useRouting } from '@/features/routing/use-route-planning';
 import { useDeleteStop } from '@/features/roadbook/roadbook-screen';
 import { navigationUrl } from '@/lib/amap-navigation';
+import { useMobilePlatform } from '@/lib/use-mobile-platform';
 import { MapCanvas } from './map-canvas';
 export function MapScreen() {
+  const platform = useMobilePlatform();
   const { snapshot, online } = useTrip(),
     day = useCurrentDay(),
     params = useSearchParams(),
@@ -28,7 +30,7 @@ export function MapScreen() {
     );
   const stop = day.stops.find((s) => s.id === (selected ?? params.get('stop'))),
     total = summary(day, snapshot.records),
-    navigation = stop && navigationUrl(stop);
+    navigation = stop && navigationUrl(stop, platform);
   return (
     <AppShell active="map">
       <div className="map-heading">
@@ -83,7 +85,7 @@ export function MapScreen() {
                   <a
                     className="outline-link"
                     href={navigation}
-                    target="_blank"
+                    target={platform === 'desktop' ? '_blank' : '_self'}
                     rel="noreferrer"
                   >
                     <Navigation />

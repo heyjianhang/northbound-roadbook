@@ -24,6 +24,7 @@ import { emptyStop } from '@/features/trip/commands';
 import { duration, position } from '@/features/trip/selectors';
 import type { Stop } from '@/features/trip/types';
 import { navigationUrl } from '@/lib/amap-navigation';
+import { useMobilePlatform } from '@/lib/use-mobile-platform';
 import { toast } from '@/components/ui/toast';
 import { useDeleteStop } from '@/features/roadbook/roadbook-screen';
 import { PlaceForm } from './place-form';
@@ -94,12 +95,13 @@ export function EditPlaceScreen() {
   );
 }
 export function PlaceScreen() {
+  const platform = useMobilePlatform();
   const day = useCurrentDay(),
     params = useSearchParams(),
     { snapshot } = useTrip(),
     remove = useDeleteStop();
   const stop = day?.stops.find((s) => s.id === params.get('stop')),
-    navigation = stop && navigationUrl(stop);
+    navigation = stop && navigationUrl(stop, platform);
   return (
     <AppShell title="地点详情">
       {!stop || !day ? (
@@ -123,7 +125,7 @@ export function PlaceScreen() {
               <a
                 className="primary-link"
                 href={navigation}
-                target="_blank"
+                target={platform === 'desktop' ? '_blank' : '_self'}
                 rel="noreferrer"
               >
                 <Navigation />
