@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import { PwaProvider, usePwa } from '@/pwa/register';
+import { AccountProvider } from '@/features/accounts/provider';
 
 function AutomaticUpdates() {
   const { updateAvailable, update } = usePwa();
@@ -17,7 +18,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <PwaProvider>
       <AutomaticUpdates />
-      {children}
+      <AccountProvider>{children}</AccountProvider>
     </PwaProvider>
   );
 }

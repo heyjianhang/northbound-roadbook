@@ -1,16 +1,19 @@
 'use client';
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { lazy, Suspense, useEffect, useRef } from 'react';
 import {
   ArrowRight,
   BookOpen,
   CarFront,
   Compass,
-  ExternalLink,
   MapPin,
   Navigation,
+  UserRound,
+  MessageCircle,
 } from 'lucide-react';
 import Link, { useSearchParams } from '@/lib/navigation';
+import { PostLink } from './post-link';
+import { useMobilePlatform } from '@/lib/use-mobile-platform';
 import { dayHeading, duration, legsForDay } from '@/features/trip/selectors';
 import type { Day, Stop } from '@/features/trip/types';
 import {
@@ -22,9 +25,17 @@ import {
   type View,
 } from './data';
 import { dayPhotos } from './photos';
+import { AccountPage } from '@/features/accounts/account-page';
 import { PlaceCover } from './place-cover';
+import { PlaceTabs } from './place-tabs';
 import { postsForPlace } from './posts';
 import { RouteMap } from './route-map';
+
+const ChatScreen = lazy(() =>
+  import('@/features/agent/chat-screen').then((module) => ({
+    default: module.ChatScreen,
+  })),
+);
 
 function AmapLink({
   stop,
@@ -33,13 +44,14 @@ function AmapLink({
   stop: Stop;
   compact?: boolean;
 }) {
-  const link = amapLink(stop);
+  const platform = useMobilePlatform();
+  const link = amapLink(stop, platform);
   return (
     <a
       className="text-link"
       href={link.href}
       aria-label={compact ? `${stop.name} · ${link.label}` : undefined}
-      target="_blank"
+      target={link.target}
       rel="noopener noreferrer"
     >
       <Navigation />
@@ -219,32 +231,19 @@ function Place({
   return (
     <article className="narrow-page place-detail">
       <PlaceCover key={stop.id} name={stop.name} backHref={backHref} />
-      <section className="place-posts" aria-label="小红书帖子">
-        {postsForPlace(stop.name).length > 0 ? (
-          <div className="guide-links xhs-posts">
-            {postsForPlace(stop.name).map((post) => (
-              <a
-                key={post.id}
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${post.title} · 打开小红书`}
-              >
-                <div>
-                  <span className="post-platform">小红书</span>
-                  <strong>{post.title}</strong>
-                  <small>
-                    {[post.dateLabel, ...post.tags].filter(Boolean).join(' · ')}
-                  </small>
-                </div>
-                <ExternalLink aria-hidden="true" />
-              </a>
-            ))}
-          </div>
-        ) : (
-          <p className="muted">暂无收录</p>
-        )}
-      </section>
+      <PlaceTabs key={stop.name} stopId={stop.id}>
+        <section className="place-posts" aria-label="小红书帖子">
+          {postsForPlace(stop.name).length > 0 ? (
+            <div className="guide-links xhs-posts">
+              {postsForPlace(stop.name).map((post) => (
+                <PostLink key={post.id} post={post} />
+              ))}
+            </div>
+          ) : (
+            <p className="muted">暂无收录</p>
+          )}
+        </section>
+      </PlaceTabs>
     </article>
   );
 }
@@ -263,7 +262,9 @@ export function StaticRoadbook({
     }
   }, [view]);
   return (
-    <div className={`app-shell${view === 'route' ? ' app-shell--map' : ''}`}>
+    <div
+      className={`app-shell${view === 'route' ? ' app-shell--map' : ''}${view === 'agent' ? ' app-shell--agent' : ''}`}
+    >
       <header className="site-header">
         <Link
           className="brand"
@@ -290,6 +291,18 @@ export function StaticRoadbook({
           >
             路线总览
           </Link>
+          <Link
+            href={pageUrl('agent', day.id)}
+            aria-current={view === 'agent' ? 'page' : undefined}
+          >
+            旅行助手
+          </Link>
+          <Link
+            href={pageUrl('account', day.id)}
+            aria-current={view === 'account' ? 'page' : undefined}
+          >
+            账户
+          </Link>
         </nav>
       </header>
       <main id="main-content">
@@ -297,6 +310,16 @@ export function StaticRoadbook({
           <Daily day={day} />
         ) : view === 'route' ? (
           <RouteOverview day={day} />
+        ) : view === 'agent' ? (
+          <Suspense
+            fallback={
+              <p className="p-6 text-sm text-muted-foreground">正在打开助手…</p>
+            }
+          >
+            <ChatScreen dayId={day.id} />
+          </Suspense>
+        ) : view === 'account' ? (
+          <AccountPage />
         ) : (
           <Place
             day={day}
@@ -319,6 +342,20 @@ export function StaticRoadbook({
         >
           <MapPin />
           路线
+        </Link>
+        <Link
+          href={pageUrl('agent', day.id)}
+          aria-current={view === 'agent' ? 'page' : undefined}
+        >
+          <MessageCircle />
+          助手
+        </Link>
+        <Link
+          href={pageUrl('account', day.id)}
+          aria-current={view === 'account' ? 'page' : undefined}
+        >
+          <UserRound />
+          账户
         </Link>
       </nav>
     </div>

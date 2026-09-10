@@ -49,16 +49,14 @@ assert.match(
   webmanifest.headers.get('Content-Type'),
   /application\/manifest\+json/,
 );
+const sessionResponse = await fetch(new URL('/api/accounts/session', origin));
+assert.equal(sessionResponse.status, 200);
+assert.equal(sessionResponse.headers.get('Cache-Control'), 'no-store');
+const session = await sessionResponse.json();
+assert.equal(typeof session.adminConfigured, 'boolean');
+assert.equal(session.user, null);
 const configResponse = await fetch(new URL('/api/amap-config', origin));
-assert.equal(configResponse.status, 200);
-const config = await configResponse.json();
-assert.equal(typeof config.configured, 'boolean');
-assert.equal(config.proxyPath, '/_AMapService');
-assert.deepEqual(Object.keys(config).sort(), [
-  'configured',
-  'key',
-  'proxyPath',
-]);
+assert.equal(configResponse.status, 401);
 assert.equal(configResponse.headers.get('Cache-Control'), 'no-store');
 const browserReport = await readFile(
   new URL('../docs/browser-verification-2026-09-09.json', import.meta.url),

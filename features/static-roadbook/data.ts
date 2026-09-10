@@ -1,10 +1,11 @@
 import content from '../../data/roadbook.json';
 import type { RoadbookFile, Stop } from '../trip/types';
-import { navigationUrl } from '../../lib/amap-navigation';
+import { navigationUrl, amapSearchUrl } from '../../lib/amap-navigation';
+import type { mobilePlatform } from '../../lib/mobile-platform';
 
 // The fixed JSON is checked by the static-roadbook integration test.
 export const roadbook = content as unknown as RoadbookFile;
-export type View = 'roadbook' | 'route' | 'place';
+export type View = 'roadbook' | 'route' | 'place' | 'account' | 'agent';
 export function pageUrl(view: View, dayId: string, stopId?: string) {
   const query = new URLSearchParams({ day: dayId });
   if (view !== 'roadbook') query.set('view', view);
@@ -21,7 +22,8 @@ export function selectedPage(
     roadbook.days[0];
   const queryView = params.get('view');
   const view: View =
-    queryView && ['roadbook', 'route', 'place'].includes(queryView)
+    queryView &&
+    ['roadbook', 'route', 'place', 'account', 'agent'].includes(queryView)
       ? (queryView as View)
       : fallback;
   return {
@@ -30,17 +32,16 @@ export function selectedPage(
     stop: day.stops.find((s) => s.id === params.get('stop')),
   };
 }
-export function amapLink(stop: Stop) {
-  const navigation = navigationUrl(stop);
-  if (navigation) return { href: navigation, label: '高德导航' };
-  const query = new URLSearchParams({
-    keyword: stop.name,
-    city: '呼伦贝尔',
-    view: 'list',
-    callnative: '1',
-    src: 'northbound-roadbook',
-  });
-  return { href: `https://uri.amap.com/search?${query}`, label: '高德找地点' };
+export function amapLink(
+  stop: Stop,
+  platform: ReturnType<typeof mobilePlatform> = 'desktop',
+) {
+  const navigation = navigationUrl(stop, platform);
+  return {
+    href: navigation || amapSearchUrl(stop.name, platform),
+    label: navigation ? '高德导航' : '高德找地点',
+    target: platform === 'desktop' ? '_blank' : '_self',
+  };
 }
 
 export function mapPlaceUrl(dayId: string, stopId: string, mapDayId: string) {

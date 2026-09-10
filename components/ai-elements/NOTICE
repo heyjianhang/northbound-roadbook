@@ -1,0 +1,12 @@
+Copyright 2023 Vercel, Inc.
+
+These components derive from AI Elements:
+https://github.com/vercel/ai-elements
+https://registry.ai-sdk.dev
+
+Licensed under the Apache License, Version 2.0.
+Upstream license notice: https://github.com/vercel/ai-elements/blob/main/LICENSE
+
+Northbound modifications: Base UI render composition, Chinese labels, a text-only
+prompt input, retained conversation/message/tool primitives, and simplified tool
+output rendering. Unused attachments, branching, and speech controls are omitted.

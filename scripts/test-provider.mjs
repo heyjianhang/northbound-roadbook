@@ -10,6 +10,16 @@ const output = new URL(
 await mkdir(new URL('./', output), { recursive: true });
 await build({
   entryPoints: [
+    fileURLToPath(new URL('../tests/pwa-ui.integration.jsx', import.meta.url)),
+    fileURLToPath(
+      new URL('../tests/notes-ui.integration.jsx', import.meta.url),
+    ),
+    fileURLToPath(
+      new URL('../tests/agent-ui.integration.jsx', import.meta.url),
+    ),
+    fileURLToPath(
+      new URL('../tests/accounts.integration.jsx', import.meta.url),
+    ),
     fileURLToPath(
       new URL('../tests/static-roadbook.integration.jsx', import.meta.url),
     ),
@@ -34,6 +44,10 @@ const result = spawnSync(
   process.execPath,
   [
     '--test',
+    fileURLToPath(new URL('pwa-ui.integration.mjs', output)),
+    fileURLToPath(new URL('notes-ui.integration.mjs', output)),
+    fileURLToPath(new URL('agent-ui.integration.mjs', output)),
+    fileURLToPath(new URL('accounts.integration.mjs', output)),
     fileURLToPath(new URL('provider.integration.mjs', output)),
     fileURLToPath(new URL('navigation.integration.mjs', output)),
     fileURLToPath(new URL('static-roadbook.integration.mjs', output)),

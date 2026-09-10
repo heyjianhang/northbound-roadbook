@@ -1,5 +1,7 @@
 import { createServer } from 'node:http';
 import { loadEnvFile } from 'node:process';
+import { createAccountsMiddleware } from './accounts.mjs';
+import { createAgentMiddleware } from './agent.mjs';
 import { createAmapMiddleware } from './amap-proxy.mjs';
 import { readFile, stat } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
@@ -23,7 +25,9 @@ const mime = {
 };
 export function createHandler(env = process.env, staticRoot = root) {
   const amap = createAmapMiddleware(env);
-  return async (req, res) => {
+  const accounts = createAccountsMiddleware(env);
+  const agent = createAgentMiddleware(env);
+  const handler = async (req, res) => {
     try {
       if (req.method !== 'GET' && req.method !== 'HEAD') {
         res.writeHead(405);
@@ -96,6 +100,13 @@ export function createHandler(env = process.env, staticRoot = root) {
       res.end('服务暂时不可用');
     }
   };
+  const secured = (req, res) =>
+    accounts(req, res, () => agent(req, res, () => handler(req, res)));
+  secured.close = () => {
+    agent.close();
+    accounts.close();
+  };
+  return secured;
 }
 if (
   process.argv[1] &&

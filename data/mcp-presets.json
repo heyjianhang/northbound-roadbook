@@ -1,0 +1,50 @@
+[
+  {
+    "id": "amap",
+    "name": "高德地图与天气",
+    "description": "地点搜索、天气、地址解析与步行、骑行、公交、驾车路线。",
+    "transport": "sse",
+    "url": "",
+    "host": "mcp.api-inference.modelscope.net",
+    "reviewedTools": [
+      "maps_regeocode",
+      "maps_geo",
+      "maps_ip_location",
+      "maps_weather",
+      "maps_search_detail",
+      "maps_bicycling",
+      "maps_direction_walking",
+      "maps_direction_driving",
+      "maps_direction_transit_integrated",
+      "maps_distance",
+      "maps_text_search",
+      "maps_around_search"
+    ]
+  },
+  {
+    "id": "websearch",
+    "name": "智谱联网搜索",
+    "description": "通过阿里云百炼查询网页信息与来源。",
+    "transport": "sse",
+    "url": "https://dashscope.aliyuncs.com/api/v1/mcps/zhipu-websearch/sse",
+    "reviewedTools": []
+  },
+  {
+    "id": "market",
+    "name": "当地美食推荐",
+    "description": "传入地名，返回当地美食和推荐理由。",
+    "transport": "streamable_http",
+    "url": "https://dashscope.aliyuncs.com/api/v1/mcps/market-cmapi00067124/mcp",
+    "reviewedTools": ["推荐美食."]
+  },
+  {
+    "id": "fliggy",
+    "name": "飞猪旅行",
+    "description": "机票、火车、酒店、景点和旅行信息查询。",
+    "transport": "stdio",
+    "runtime": "fliggy",
+    "version": "0.5.1",
+    "url": "",
+    "reviewedTools": []
+  }
+]

@@ -707,8 +707,12 @@ h1 {
 }
 @media (max-width: 760px) {
   .app-shell {
-    padding: env(safe-area-inset-top) 20px
-      calc(96px + env(safe-area-inset-bottom));
+    --mobile-nav-height: calc(64px + env(safe-area-inset-bottom, 0px));
+    --mobile-nav-clearance: calc(var(--mobile-nav-height) + 16px);
+    padding: env(safe-area-inset-top, 0px)
+      max(20px, env(safe-area-inset-right, 0px))
+      var(--mobile-nav-clearance)
+      max(20px, env(safe-area-inset-left, 0px));
   }
   .site-header {
     display: none;
@@ -830,25 +834,29 @@ h1 {
     bottom: 0;
     left: 0;
     right: 0;
+    height: var(--mobile-nav-height);
     background: #faf8f4f5;
-    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     border-top: 1px solid var(--border);
-    padding: 10px 20px calc(10px + env(safe-area-inset-bottom));
+    padding: 6px max(16px, env(safe-area-inset-right, 0px))
+      calc(6px + env(safe-area-inset-bottom, 0px))
+      max(16px, env(safe-area-inset-left, 0px));
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
     z-index: 30;
   }
   .mobile-nav > a {
     display: flex;
-    min-height: 45px;
+    min-height: 48px;
     min-width: 0;
     align-items: center;
     justify-content: center;
     gap: 8px;
     font-size: 14px;
     color: var(--muted-foreground);
-    border-radius: 10px;
+    border-radius: 12px;
   }
   .mobile-nav > a[aria-current='page'] {
     color: var(--primary);
@@ -1991,14 +1999,10 @@ h1 {
 @media (max-width: 760px) {
   .app-shell--map {
     padding-top: env(safe-area-inset-top);
+    padding-bottom: var(--mobile-nav-height);
   }
   .app-shell--map .site-header {
     display: none;
-  }
-  .app-shell--map .mobile-nav {
-    position: static;
-    flex-shrink: 0;
-    padding: 8px 20px calc(8px + env(safe-area-inset-bottom));
   }
 }
 .trip-map-pin {
@@ -2047,7 +2051,7 @@ h1 {
 /* Place photo opens the introduction; post links stay directly accessible. */
 .place-cover {
   position: relative;
-  height: 340px;
+  height: 280px;
   overflow: hidden;
   border-radius: 20px;
   background: var(--foreground);
@@ -2184,7 +2188,7 @@ h1 {
   }
   .place-cover {
     margin-inline: -20px;
-    height: clamp(240px, 35svh, 340px);
+    height: clamp(200px, 28svh, 280px);
     border-radius: 0 0 20px 20px;
   }
   .place-cover-trigger {
@@ -2198,3 +2202,110 @@ h1 {
     margin-top: 22px;
   }
 }
+
+/* 账户沿用路书主题，表单由已安装的 shadcn 组件组成。 */
+.account-gate {
+  --account-top-space: calc(clamp(24px, 8dvh, 64px) + env(safe-area-inset-top));
+  --account-bottom-space: calc(clamp(20px, 4dvh, 32px) + env(safe-area-inset-bottom));
+  width: min(100% - 32px, 420px);
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding-top: var(--account-top-space);
+  padding-bottom: var(--account-bottom-space);
+  display: grid;
+  align-content: center;
+  gap: 24px;
+}
+.account-auth-card { min-height: 0; max-height: min(720px, calc(100dvh - var(--account-top-space) - var(--account-bottom-space))); }
+.account-auth-header, .account-auth-actions { flex-shrink: 0; }
+.account-auth-actions { border-color: var(--border); }
+.account-auth-form { display: flex; flex-direction: column; min-height: 0; gap: 16px; }
+.account-auth-fields { min-height: 0; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-gutter: stable; scrollbar-width: thin; scroll-padding-block: 8px; padding-block: 4px; }
+.account-auth-fields [data-slot='field'] { gap: 6px; }
+.account-auth-buttons { display: grid; gap: 8px; }
+@media (max-height: 600px) {
+  .account-gate {
+    --account-top-space: calc(16px + env(safe-area-inset-top));
+    --account-bottom-space: calc(16px + env(safe-area-inset-bottom));
+  }
+  .account-auth-card { gap: 16px; padding-top: 16px; }
+}
+.account-brand { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 22px; font-weight: 650; color: var(--primary); }
+.account-brand svg { width: 28px; height: 28px; }
+.account-fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.account-gate h1, .account-page h1, .account-page h2 { margin: 0; }
+.account-page { max-width: 960px; margin: auto; padding: 32px 0; display: grid; gap: 24px; }
+.account-admin-page { width: min(100% - 40px, 960px); padding-bottom: calc(32px + env(safe-area-inset-bottom)); }
+.account-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.account-heading h1 { font-size: 28px; }
+.account-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 24px; }
+.account-management { display: grid; gap: 20px; }
+.account-link-result { margin-top: 24px; display: grid; gap: 12px; overflow-wrap: anywhere; }
+.account-link-result p, .account-member-list p { color: var(--muted-foreground); font-size: 14px; line-height: 1.6; }
+.account-member-list { margin: 0; padding: 0; list-style: none; }
+.account-member-list > li { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding: 16px 0; }
+.account-member-list > li + li { border-top: 1px solid var(--border); }
+.account-member-info { display: flex; align-items: center; gap: 12px; min-width: 0; overflow-wrap: anywhere; }
+.account-member-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.account-gate [data-slot='input'], .account-page [data-slot='input'] { min-height: 44px; }
+.account-gate [data-slot='button'], .account-page [data-slot='button'] { min-height: 44px; }
+@media (max-width: 760px) {
+  .account-grid { grid-template-columns: 1fr; }
+  .account-page { padding: 24px 0; }
+  .account-member-actions { width: 100%; }
+}
+
+.account-gate h1 { font-size: 26px; line-height: 1.4; }
+
+/* The assistant keeps its header and composer visible while the conversation scrolls. */
+.app-shell--agent {
+  height: 100dvh;
+  max-width: 1280px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.app-shell--agent .site-header { height: 76px; flex-shrink: 0; }
+.app-shell--agent #main-content { flex: 1; min-height: 0; display: flex; }
+.agent-page { width: 100%; min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+.agent-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0 16px; flex-shrink: 0; border-bottom: 1px solid var(--border); }
+.agent-heading h1 { font-size: 22px; font-weight: 650; letter-spacing: -.5px; }
+.agent-heading p { margin-top: 5px; font-size: 13px; color: var(--muted-foreground); }
+.agent-workspace { flex: 1; display: flex; min-height: 0; min-width: 0; position: relative; }
+.agent-channel { flex: 1; min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+.agent-channel [data-author='companion'] { background: #e5ede4; color: #2f4536; }
+.agent-composer { flex-shrink: 0; padding: 12px 4px max(20px, env(safe-area-inset-bottom)); }
+.agent-composer [data-slot='input-group'] { background: var(--card); border-radius: 18px; }
+.agent-composer textarea { font-size: 16px; padding: 14px 16px 6px; }
+.agent-composer [data-slot='input-group-addon'] { padding: 8px 12px 12px; }
+.agent-composer [data-slot='input-group-addon'] button { width: 40px; height: 40px; }
+.agent-memory-panel { width: 340px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; padding: 18px; border-left: 1px solid var(--border); background: var(--card); min-height: 0; }
+.agent-settings input { min-height: 42px; }
+.agent-settings label { align-items: center; }
+@media (max-width: 760px) {
+  .mobile-nav { gap: 4px; }
+  .mobile-nav > a { gap: 5px; font-size: 13px; }
+  .mobile-nav svg { width: 19px; height: 19px; }
+  .app-shell--agent { padding: env(safe-area-inset-top) 0 var(--mobile-nav-height); }
+  .app-shell--agent .site-header { display: none; }
+  .agent-heading { padding: 18px 18px 12px; }
+  .agent-heading h1 { font-size: 20px; }
+  .agent-heading p { font-size: 12px; }
+  .agent-composer { padding: 8px 12px 10px; }
+  .agent-memory-panel { position: absolute; inset: 0; width: 100%; z-index: 10; border-left: 0; }
+}
+@media (max-height: 600px) {
+  .agent-heading { padding-block: 10px; }
+  .agent-heading p { display: none; }
+  .agent-composer textarea { min-height: 44px; max-height: 100px; }
+}
+
+/* 地点资料标签与共享 Markdown 笔记，沿用路书主题及导航安全区。 */
+.place-tabs { margin-top: 24px; gap: 20px; }
+.place-tabs .place-posts { margin-top: 0; }
+.note-editor { min-height: clamp(240px, 45dvh, 520px); resize: vertical; font-size: 16px; line-height: 1.7; }
+.note-markdown { min-width: 0; overflow-wrap: anywhere; line-height: 1.8; }
+.note-markdown pre { max-width: 100%; overflow-x: auto; }
+.note-markdown img { max-width: 100%; height: auto; }
+.note-markdown table { display: block; max-width: 100%; overflow-x: auto; }
